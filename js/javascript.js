@@ -15,9 +15,13 @@ const formu = document.getElementById("formTarea");
 const txtTarea = document.getElementById("txtTarea");
 const boxTareas = document.getElementById("listaTareas");
 
-const listaDeTareas = ["Ordenar el código JS", "Crear las funciones", "Probar el programa"];
+// const listaDeTareas = ["Ordenar el código JS", "Crear las funciones", "Probar el programa"];
 
-
+const listaDeTareas = [
+{id: 1, titulo: "Ordenar el código de JS", isCompletada: true},
+{id: 2, titulo: "Crear las funciones", isCompletada: false},
+{id: 3, titulo: "Probar el programa", isCompletada: false},
+];
 
 
 
@@ -37,19 +41,21 @@ function mostrarTareas(){
 
     // cargar las nuevas tareas
     listaDeTareas.forEach((tarea)=> {
-        boxTareas.innerHTML += `<li>${tarea}</li>`;
+        const titulo = tarea.titulo;
+        const id = tarea.id;
+
+        const isChecked = tarea.isCompletada ? "checked" : "";
+
+        boxTareas.innerHTML += `
+        <li>
+        <input type="checkbox" id="${id} name="checkbox" ${isChecked} />
+        <label for="${id}">${titulo}</label> <br> <button class="ButtonLi" onclick="eliminarTarea(${id})">Eliminar</button> 
+        <button class="ButtonLi" onclick="completarTarea(${id})">Completar</button>
+        </li>`;
     });
 }
 
-
-//------------------------------------------------------
-// 4. EvenListeners
-//------------------------------------------------------
-formu.addEventListener("submit", () => {
-    
-    //NO envíes el formulario
-    event.preventDefault();
-
+function agregarTarea(){
     const nuevaTarea = txtTarea.value.trim(); // el texto del input
     console.log(nuevaTarea);
 
@@ -63,6 +69,30 @@ formu.addEventListener("submit", () => {
     txtTarea.value = ""; //limpiar el campo de texto una vez enviado
 
     mostrarTareas();
+}
+
+function eliminarTarea(idTarea){
+    alert("Eliminar tarea: " + idTarea)
+    // modificar la lista y eliminar idTarea
+    mostrarTareas();
+}
+
+function completarTarea(idTarea){
+    alert("Completando tarea: "+ idTarea);
+    // modificar la lista
+    mostrarTareas();
+}
+
+
+//------------------------------------------------------
+// 4. EvenListeners
+//------------------------------------------------------
+formu.addEventListener("submit", (event) => {
+    
+    //NO envíes el formulario
+    event.preventDefault();
+
+    agregarTarea();
 
 });
 
