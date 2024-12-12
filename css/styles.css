@@ -94,5 +94,96 @@ button {
 
 button:hover {
     background-color: #d41992;
-
 }
+
+
+
+/* Acordeon */
+
+/* Acordeón - Estilos Generales */
+.Acordeon {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Cada item del acordeón */
+.Acordeon-item {
+    background-color: #fff;
+    border: 1px solid #f4a9c5;
+    border-radius: 20px;
+    margin: 10px 0;
+    padding: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    display: block; 
+}
+
+/* Cabecera del acordeón */
+.Acordeon-header {
+    background-color: #f24db2;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Al pasar el cursor sobre el header */
+.Acordeon-header:hover {
+    background-color: #d41992;
+}
+
+/* Contenido de cada sección del acordeón */
+.Acordeon-content {
+    background-color: #fef8fc;
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+    display: none;  /* Esto hace que el contenido no sea visible inicialmente */
+}
+
+/* Estilo de la sección activa */
+.Acordeon-item.active {
+    max-height: 500px;  /* Ajusta según el contenido */
+    opacity: 1;
+}
+
+/* Mostrar el contenido cuando la sección está activa */
+.Acordeon-item.active .Acordeon-content {
+    display: block; 
+}
+
+
+
+/*  Tabs */
+
+.Tabs-contenido {
+    display: none;
+}
+
+.Tabs-buttons {
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+}
+
+.Tabs-button {
+    padding: 10px;
+    background-color: #f24db2;
+    border: 1px solid white;
+}
+
+/* utilities */
+.u-active {
+    background-color: #f4a9c5;
+    border: 1px solid #f24db2;
+}
+
+.u-visible {
+    display: block;
+} 
