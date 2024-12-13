@@ -100,7 +100,7 @@ button:hover {
 
 /* Acordeon */
 
-/* Acordeón - Estilos Generales */
+/* Acordeon - Estilos Generales */
 .Acordeon {
     width: 100%;
     max-width: 400px;
@@ -115,10 +115,8 @@ button:hover {
     margin: 10px 0;
     padding: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
-    max-height: 0;
-    opacity: 0;
-    display: block; 
+    transition: max-height 1s ease;
+    
 }
 
 /* Cabecera del acordeón */
@@ -144,7 +142,7 @@ button:hover {
     padding: 20px;
     font-size: 1rem;
     color: #333;
-    display: none;  /* Esto hace que el contenido no sea visible inicialmente */
+    display: none;  /* Inicialmente no se muestra */
 }
 
 /* Estilo de la sección activa */
@@ -155,35 +153,58 @@ button:hover {
 
 /* Mostrar el contenido cuando la sección está activa */
 .Acordeon-item.active .Acordeon-content {
-    display: block; 
+    display: block; /* Mostrar el contenido */
 }
 
 
+/* TABS */
 
-/*  Tabs */
-
+/* Contenido de los tabs: oculto por defecto */
 .Tabs-contenido {
-    display: none;
+    display: none; 
+    padding: 20px;
+    background-color: #fef8fc; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
 }
 
+/* Mostrar el contenido del tab cuando está activo */
+.u-visible {
+    display: block;  /* Mostrar el contenido del tab activo */
+}
+
+/* Contenedor de los botones de tabs */
 .Tabs-buttons {
     display: flex;
     list-style: none;
-    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 0;
+    justify-content: center; 
 }
 
+/* Estilo de los botones de los tabs */
 .Tabs-button {
-    padding: 10px;
-    background-color: #f24db2;
-    border: 1px solid white;
+    padding: 10px 20px;
+    background-color: #f24db2; 
+    border: 1px solid white; 
+    margin-right: 10px;
+    border-radius: 5px;
+    color: white; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* utilities */
+.Tabs-button:hover {
+    background-color: #d41992;
+    transform: scale(1.1);
+}
+
+/* Estilo para el botón activo */
 .u-active {
-    background-color: #f4a9c5;
+    background-color: #f4a9c5; 
     border: 1px solid #f24db2;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.u-visible {
-    display: block;
-} 

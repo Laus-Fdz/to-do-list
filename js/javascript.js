@@ -156,46 +156,49 @@ headers.forEach( header => {
 headers[0].click();
 
 
-//------------------------------------------------------
+//---------------------9a---------------------------------
 // TABS
 //------------------------------------------------------
 
 
 // 1. Creamos variables y constantes
-const listaBotones = document.querySelectorAll(".Tabs-buttons");
+const listaBotones = document.querySelectorAll(".Tabs-button");
 const listaPaginas = document.querySelectorAll(".Tabs-contenido");
 
 // 2. Creamos funciones y eventListeners
 listaBotones.forEach(boton => {
     boton.addEventListener("click", () => {
 
-        // leer el dataset
+        // Primero, quitar clases de todos los tabs
+        quitarClases();
+
+        // Leer el dataset para obtener el id del contenido
         const targetId = boton.dataset.tab;
         const target = document.getElementById(targetId);
 
-        // al target le agregue la clase u-visible
+        // Agregar la clase u-visible al contenido correspondiente
         target.classList.add("u-visible");
 
-
-        // agregar la clase active al Tabs-button
+        // Agregar la clase u-active al tab clickeado
         boton.classList.add("u-active");
     });
 });
 
-// funcion que quita clases a mis elementos activos
-function quitarClases(){
-
-    listaBotones.forEach( item => {
+// Función que quita las clases a los elementos activos
+function quitarClases() {
+    // Eliminar la clase active de todos los botones
+    listaBotones.forEach(item => {
         item.classList.remove("u-active");
     });
 
-    listaPaginas.entries.forEach( pagina => {
+    // Eliminar la clase visible de todos los contenidos de los tabs
+    listaPaginas.forEach(pagina => {
         pagina.classList.remove("u-visible");
     });
-
 }
 
-// 3. Iniciamos nuestro programa
+// 3. Iniciar el programa
 listaBotones[0].click();
+
 
 
