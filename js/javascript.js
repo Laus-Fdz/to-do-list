@@ -84,7 +84,9 @@ function eliminarTarea(idTarea){
 
     // 3. método utilizando filter
     // para que este funcione, listaDeTareas tiene que estar definido con let
-    listaDeTareas = listaDeTareas.filter((t) => t.id !== idTarea);
+    listaDeTareas = listaDeTareas.filter((t) => t.id !== idTarea); 
+    // devuelve todas las tareas que no tengan idTarea
+    // 
 
     mostrarTareas();
 }
@@ -102,7 +104,10 @@ function completarTarea(idTarea){
     //     tarea.isCompletada = true;
     // }
 
-    tarea.isCompletada = !tarea.isCompletada;
+    // tarea.isCompletada = tarea.isCompletada ? false:true;
+
+    tarea.isCompletada = !tarea.isCompletada; // guarda el contrario 
+
 
     mostrarTareas();
 }
