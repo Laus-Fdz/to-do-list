@@ -11,39 +11,7 @@
     <h1>ToDo List!</h1>
     <p>PARA APROBAR DISEÑO WEB</p>
 
-    <div class="DivTareas">
-        <ul id="listaTareas">
-            <li>Ingesa un tarea en la lista...</li>
-        </ul>
-    </div>
-
-    <form id="formTarea">
-        <input id="txtTarea" type="text" placeholder="Ingresa una tarea">
-        <button type="submit">Agregar Tarea</button>
-    </form>
-
-    <!-- Acordeon -->
-
-    <div class="Acordeon">
-        <div class="Acordeon-item">
-            <div class="Acordeon-header">Sección 1</div>
-            <div class="Acordeon-content">Contenido sección 1</div>
-        </div>
-    
-        <div class="Acordeon-item">
-            <div class="Acordeon-header">Sección 2</div>
-            <div class="Acordeon-content">Contenido sección 2</div>
-        </div>
-    
-        <div class="Acordeon-item">
-            <div class="Acordeon-header">Sección 3</div>
-            <div class="Acordeon-content">Contenido sección 3</div>
-        </div>
-    </div>
-    
-
-    <!--  Tabs -->
-
+    <!-- Tabs -->
     <ul class="Tabs-buttons">
         <li data-tab="pagina1" class="Tabs-button">Tab1</li>
         <li data-tab="pagina2" class="Tabs-button">Tab2</li>
@@ -51,28 +19,52 @@
     </ul>
 
     <div class="Tabs-container">
+        <!-- Página 1: ToDo List y acordeón -->
         <div id="pagina1" class="Tabs-contenido">
-            <h2>Página 1</h2>
-            <p> Contenido página 1</p>
+            <h2>Lista de tareas</h2>
+
+            <div class="DivTareas">
+                <ul id="listaTareas">
+                    <li>Ingresa una tarea en la lista...</li>
+                </ul>
+            </div>
+
+            <form id="formTarea">
+                <input id="txtTarea" type="text" placeholder="Ingresa una tarea">
+                <button type="submit">Agregar Tarea</button>
+            </form>
+
+            <div class="Acordeon">
+                <div class="Acordeon-item">
+                    <div class="Acordeon-header">Sección 1</div>
+                    <div class="Acordeon-content">Contenido sección 1</div>
+                </div>
+                
+                <div class="Acordeon-item">
+                    <div class="Acordeon-header">Sección 2</div>
+                    <div class="Acordeon-content">Contenido sección 2</div>
+                </div>
+                
+                <div class="Acordeon-item">
+                    <div class="Acordeon-header">Sección 3</div>
+                    <div class="Acordeon-content">Contenido sección 3</div>
+                </div>
+            </div>
         </div>
 
+        <!-- Página 2: Contenido adicional -->
         <div id="pagina2" class="Tabs-contenido">
             <h2>Página 2</h2>
-            <p> Contenido página 2</p>
+            <p>Contenido de la página 2</p>
         </div>
 
+        <!-- Página 3: Contenido adicional -->
         <div id="pagina3" class="Tabs-contenido">
             <h2>Página 3</h2>
-            <p> Contenido página 3</p>
+            <p>Contenido de la página 3</p>
         </div>
-        
     </div>
 
-
-
-
     <script src="./js/javascript.js"></script>
-
-
 </body>
 </html>
